@@ -1,0 +1,7 @@
+# 分析関連
+pandas==1.2.3
+numpy==1.20.2
+# DI(Dependency Injection/依存性注入)
+injector==0.18.4
+# 仮想通貨取引所のAPIクライアント
+ccxt==1.45.77

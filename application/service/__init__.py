@@ -1,0 +1,3 @@
+from .download_market_trades_application_service import DownloadMarketTradesApplicationService
+
+__all__ = ["DownloadMarketTradesApplicationService"]
