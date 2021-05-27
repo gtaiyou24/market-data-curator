@@ -10,7 +10,7 @@ from domain.model.trade import MarketTrades
 class MarketTradesTranslator:
 
     def translate(self, pair: Tuple[Asset, Currency], liquid_response_json: dict) -> MarketTrades:
-        models = pd.DataFrame(liquid_response_json["models"])
+        models = pd.DataFrame(liquid_response_json)
         table = pd.DataFrame(models[["id", "quantity", "price", "taker_side", "timestamp"]])
         table.columns = ["ID", "Quantity", "Price", "TakerSide", "Timestamp"]
         table["TakerSide"].replace({"buy": "Buy", "sell": "Sell"}, inplace=True)

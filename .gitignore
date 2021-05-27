@@ -1,2 +1,12 @@
-.env
+# python
+*.pyc
+__pycache__
+
+# pycharm
 .idea
+
+# secret
+.env
+
+# file
+*.csv.gz

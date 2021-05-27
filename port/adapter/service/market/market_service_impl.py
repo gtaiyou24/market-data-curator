@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Tuple
 
 from injector import inject
@@ -15,5 +16,5 @@ class MarketServiceImpl(MarketService):
     def __init__(self, market_adapter: MarketAdapter):
         self.__market_adapter = market_adapter
 
-    def fetch_market_trades(self, pair: Tuple[Asset, Currency]) -> MarketTrades:
-        return self.__market_adapter.fetch_market_trades(pair)
+    def fetch_market_trades(self, pair: Tuple[Asset, Currency], from_datetime: datetime) -> MarketTrades:
+        return self.__market_adapter.fetch_market_trades(pair, from_datetime)

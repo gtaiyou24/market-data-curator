@@ -5,8 +5,9 @@ from typing import NoReturn
 import requests
 
 
-WEB_HOOK_URL = os.environ.get("SLACK_WEB_HOOK_URL")
-USERNAME = "通知"
+WEB_HOOK_URL = os.getenv("SLACK_WEB_HOOK_URL")
+SERVER = os.getenv("SERVER")
+USERNAME = "[ {} ] Market Data Curator".format(SERVER)
 
 
 def post(message: str) -> NoReturn:

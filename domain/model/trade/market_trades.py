@@ -5,6 +5,7 @@ import pandas as pd
 
 from domain.model.asset import Asset
 from domain.model.currency import Currency
+from others import log
 
 
 @dataclass(init=False, frozen=True, unsafe_hash=True)
@@ -20,5 +21,10 @@ class MarketTrades:
         assert set(table["TakerSide"].unique()) == {"Buy", "Sell"}, "TakerSideには'Buy','Sell'を指定してください。"
         assert pair, "通貨ペアは必須です。"
         super().__setattr__("pair", pair)
+
+        table['Timestamp'] = table['Timestamp'].astype(float)
         # 新しい約定が上になるようにする
         super().__setattr__("table", table.sort_values(by="Timestamp", ascending=False))
+
+    def last_timestamp(self) -> float:
+        return self.table['Timestamp'].max()

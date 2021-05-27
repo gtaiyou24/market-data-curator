@@ -1,3 +1,3 @@
-from .download_market_trades_application_service import DownloadMarketTradesApplicationService
+from .market_trades_application_service import MarketTradesApplicationService
 
-__all__ = ["DownloadMarketTradesApplicationService"]
+__all__ = ["MarketTradesApplicationService"]

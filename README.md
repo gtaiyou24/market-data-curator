@@ -17,5 +17,5 @@ $ docker container run --rm \
     -v `pwd`:/market-data-curator/ \
     --env-file=.env \
     market-data-curator:latest \
-    python port/job/download_market_trades.py BTC JPY
+    python port/job/download_market_trades.py BTC JPY 20210417 20210418
 ```
