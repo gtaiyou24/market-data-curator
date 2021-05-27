@@ -6,6 +6,7 @@ from domain.model.asset import Asset
 from domain.model.currency import Currency
 from domain.model.market.market_service import MarketService
 from domain.model.trade import MarketTrades, MarketTradesRepository
+from exception import SystemException
 
 
 class DownloadMarketTradesApplicationService:
@@ -22,6 +23,8 @@ class DownloadMarketTradesApplicationService:
         asset = Asset(asset_name)
         currency = Currency(currency_name)
 
-        market_trades: MarketTrades = self.__market_service.fetch_market_trades((asset, currency))
-
-        self.__market_trades_repository.save(market_trades)
+        try:
+            market_trades: MarketTrades = self.__market_service.fetch_market_trades((asset, currency))
+            self.__market_trades_repository.save(market_trades)
+        except SystemException as e:
+            e.logging()
