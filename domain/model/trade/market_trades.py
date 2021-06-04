@@ -5,7 +5,6 @@ import pandas as pd
 
 from domain.model.asset import Asset
 from domain.model.currency import Currency
-from others import log
 
 
 @dataclass(init=False, frozen=True, unsafe_hash=True)

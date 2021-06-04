@@ -1,6 +1,14 @@
 # Market Data Curator
 市場データを収集するシステム
 
+| 取引所 | マーケット | 歩み値 | 注文板 |
+|:-----:|:--------:|:-----:|:-----:|
+| Liquid | BTC/JPY | ◯     | ×     |
+| Liquid | ETH/JPY | ◯     | ×     |
+| Liquid | XRP/JPY | ◯     | ×     |
+| Liquid | QASH/JPY | ◯    | ×     |
+| Liquid | BCH/JPY | ◯     | ×     |
+
 ```bash
 # market-data-curatorリポジトリに移動
 $ cd /path/to/market-data-curator

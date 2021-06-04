@@ -17,8 +17,13 @@ from port.adapter.service.market.adapter.liquid.translator import MarketTradesTr
 class LiquidMarketAdapter(MarketAdapter):
     EXECUTIONS_API = "https://api.liquid.com/executions"
 
+    # see https://api.liquid.com/products
     PRODUCT_ID = {
-        ('BTC', 'JPY'): 5
+        ('BTC', 'JPY'): 5,
+        ('ETH', 'JPY'): 29,
+        ('XRP', 'JPY'): 83,
+        ('QASH', 'JPY'): 50,
+        ('BCH', 'JPY'): 41
     }
 
     def __init__(self):
