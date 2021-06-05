@@ -9,6 +9,8 @@
 | Liquid | QASH/JPY | ◯    | ×     |
 | Liquid | BCH/JPY | ◯     | ×     |
 
+## How to
+### Dockerのビルド
 ```bash
 # market-data-curatorリポジトリに移動
 $ cd /path/to/market-data-curator
@@ -17,8 +19,6 @@ $ docker build -t market-data-curator:latest .
 # ビルドされていることを確認
 $ docker image ls | grep market-data-curator
 ```
-
-## ジョブ一覧
 
 ### 歩み値の一括ダウンロード
 ```bash
