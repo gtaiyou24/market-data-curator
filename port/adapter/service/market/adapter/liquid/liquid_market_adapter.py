@@ -28,8 +28,8 @@ class LiquidMarketAdapter(MarketAdapter):
     }
 
     def __init__(self):
-        self.__connection_timeout = 2.0
-        self.__read_timeout = 1.0
+        self.__connection_timeout = 5.0
+        self.__read_timeout = 5.0
         self.__market_trades_translator = MarketTradesTranslator()
 
     @retry(stop_max_attempt_number=3, wait_exponential_multiplier=100)
