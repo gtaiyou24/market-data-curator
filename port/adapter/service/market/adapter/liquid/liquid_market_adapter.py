@@ -1,3 +1,4 @@
+import time
 from datetime import datetime
 from typing import Tuple
 
@@ -44,6 +45,9 @@ class LiquidMarketAdapter(MarketAdapter):
                 },
                 timeout=(self.__connection_timeout, self.__read_timeout)
             )
+
+            time.sleep(1.5)
+
             return self.__market_trades_translator.translate(pair, response.json())
         except requests.exceptions.Timeout:
             raise SystemException(ErrorCode.MARKET_2001, "liquidでタイムアウトが発生しました。")
